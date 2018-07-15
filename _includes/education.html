@@ -1,8 +1,8 @@
-{% if site.data.data.studies %}
+{% if site.data.educations %}
     {% if site.education_in_main %}
         <section class="section educations-section">
         <h2 class="section-title"><i class="fa fa-graduation-cap"></i>Education</h2>
-        {% for education in site.data.data.studies %}
+        {% for education in site.data.educations %}
           <div class="item">
           
             <div class="meta">
@@ -17,7 +17,7 @@
             
             {% if education.details %}
             <div class="details">
-              <p>{{ education.details }}</p>
+              <p>{{ education.details | markdownify}}</p>
             </div><!--//details-->
             {% endif %}
           </div><!--//item-->
@@ -29,7 +29,7 @@
 
         <h2 class="container-block-title">Education</h2>
 
-        {% for education in site.data.data.studies %}
+        {% for education in site.data.educations %}
             <div class="item">
             <h4 class="degree">{{ education.degree }}</h4>
           <h5 class="meta">{{ education.university }}</h5>

@@ -1,8 +1,8 @@
-{% if site.data.data.experiences %}
+{% if site.data.experiences %}
 <section class="section experiences-section">
-  <h2 class="section-title"><i class="fa fa-briefcase"></i>{{site.data.data.experiences.title}}</h2>
+  <h2 class="section-title"><i class="fa fa-briefcase"></i>{{site.data.experiences.title}}</h2>
 
-{% for experience in site.data.data.experiences.experiences %}
+{% for experience in site.data.experiences.experiences %}
   <div class="item">
 
     <div class="meta">
@@ -16,9 +16,9 @@
 
     </div><!--//meta-->
 
-    {% if experience.details %}
+    {% if experience.details  %}
     <div class="details">
-      <p>{{ experience.details }}</p>
+      <p>{{ experience.details | markdownify }}</p>
     </div><!--//details-->
     {% endif %}
 
