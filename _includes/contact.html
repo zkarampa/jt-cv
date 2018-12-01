@@ -1,0 +1,71 @@
+<div class="contact-container container-block">
+  <ul class="list-unstyled contact-list">
+
+    {% if profile.email %}
+    <li class="email"><i class="fas fa-envelope"></i>
+      <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.phone %}
+    <li class="phone"><i class="fas fa-phone"></i>
+      <a href="tel:{{ profile.phone }}">{{ profile.phone }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.website %}
+    <li class="website"><i class="fas fa-globe-americas"></i>
+      <a href="http://{{ profile.website }}" target="_blank">{{ profile.website }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.linkedin %}
+    <li class="linkedin"><i class="fab fa-linkedin"></i>
+      <a href="https://linkedin.com/in/{{ profile.linkedin }}" target="_blank">{{ profile.linkedin }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.github %}
+    <li class="github"><i class="fab fa-github"></i>
+      <a href="http://github.com/{{ profile.github }}" target="_blank">{{ profile.github }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.gitlab %}
+    <li class="gitlab"><i class="fab fa-gitlab"></i>
+      <a href="http://gitlab.com/{{ profile.gitlab }}" target="_blank">{{ profile.gitlab }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.bitbucket %}
+    <li class="bitbucket"><i class="fab fa-bitbucket"></i>
+      <a href="http://bitbucket.com/{{ profile.bitbucket }}" target="_blank">{{ profile.bitbucket }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.twitter %}
+    <li class="twitter"><i class="fab fa-twitter"></i>
+      <a href="https://twitter.com/{{ profile.twitter }}" target="_blank">{{ profile.twitter }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.stack-overflow %}
+    <li class="stack-overflow"><i class="fab fa-stack-overflow"></i>
+      <a href="https://stackoverflow.com/users/{{ profile.stack-overflow }}" target="_blank">{{ profile.stack-overflow }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.codewars %}
+    <li class="codewars"><i class="fas fa-code"></i>
+      <a href="https://www.codewars.com/users/{{ profile.codewars }}/completed_solutions" target="_blank">{{ profile.codewars }}</a>
+    </li>
+    {% endif %}
+
+    {% if profile.goodreads %}
+    <li class="goodreads-g"><i class="fab fa-goodreads-g"></i>
+      <a href="https://www.goodreads.com/user/show/{{ profile.goodreads }}" target="_blank">{{ profile.goodreads }}</a>
+    </li>
+    {% endif %}
+
+  </ul>
+</div><!--//contact-container-->

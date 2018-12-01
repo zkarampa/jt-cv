@@ -1,18 +1,27 @@
-{% if site.data.projects %}
+{% assign projects = site.data.projects %}
+{% if projects %}
 <section class="section projects-section">
 
-  <h2 class="section-title"><i class="fa fa-archive"></i>{{ site.data.projects.title }}</h2>
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-archive fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ projects.title }}
+  </h2>
 
-  {% if site.data.projects.intro %}
+  {% if projects.intro %}
   <div class="intro">
-      <p>{{ site.data.projects.intro | markdownify }}</p>
+      <p>{{ projects.intro | markdownify }}</p>
   </div><!--//intro-->
   {% endif %}
 
-  {% for project in site.data.projects.projects %}
+  {% for project in projects.projects %}
     <div class="item">
 
-      <span class="project-title"><a href="{{ project.link }}">{{ project.title }}</a></span>
+      <span class="project-title">
+        <a href="{{ project.link }}">{{ project.title }}</a>
+      </span>
 
       {% if project.tagline %}
       - <span class="project-tagline">{{ project.tagline }}</span>
