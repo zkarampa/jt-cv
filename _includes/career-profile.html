@@ -1,4 +1,4 @@
-{% assign career-profile = site.data.profile.summary %}
+{% assign career-profile = site.data.profile.career-profile %}
 {% if career-profile %}
 <section class="section summary-section">
 
@@ -11,7 +11,7 @@
   </h2>
 
   <div class="summary">
-    {{ career-profile.text | markdownify }}
+    {{ career-profile.summary | markdownify }}
   </div><!--//summary-->
     
 </section><!--//section-->

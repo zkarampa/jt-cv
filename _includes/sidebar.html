@@ -2,29 +2,29 @@
 {% assign profile = site.data.profile %}
 <div class="sidebar-wrapper">
 
-  <div class="profile-container">
+    <div class="profile-container">
 
-       {% if profile.avatar %}
-       <img class="avatar" src="{{ site.baseurl }}/assets/images/{{ profile.avatar }}" alt="" />
-      {% endif %}
+        {% if profile.avatar %}
+        <img class="avatar" src="{{ site.baseurl }}/assets/images/{{ profile.avatar }}" alt=""/>
+        {% endif %}
 
-      {% if profile.name %}
-      <h1 class="name">{{ profile.name }}</h1>
-      {% endif %}
+        {% if profile.name %}
+        <h1 class="name">{{ profile.name }}</h1>
+        {% endif %}
 
-       {% if profile.tagline %}
-       <h3 class="tagline">{{ profile.tagline }}</h3>
-       {% endif %}
+        {% if profile.tagline %}
+        <h3 class="tagline">{{ profile.tagline }}</h3>
+        {% endif %}
 
-  </div><!--//profile-container-->
+    </div><!--//profile-container-->
 
-  {% include contact.html %}
+    {% include contact.html %}
 
-  {% unless site.education_in_main %}
-    {% include education.html %}
-  {% endunless %}
+    {% unless site.education_in_main %}
+        {% include education.html %}
+    {% endunless %}
 
-  {% include language.html %}
-  {% include interests.html %}
+    {% include language.html %}
+    {% include interests.html %}
 
 </div><!--//sidebar-wrapper-->
