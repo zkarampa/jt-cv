@@ -1,62 +1,29 @@
 <!-- Use icons from fontawesome when you are adding new item in the contact list  -->
+{% assign profile = site.data.profile %}
 <div class="sidebar-wrapper">
 
     <div class="profile-container">
 
-        <img class="profile-img" src="{{site.baseurl}}/assets/images/{{ site.data.profile.avatar }}" alt=""/>
-
-        {% if site.data.profile.name %}
-        <h1 class="name">{{site.data.profile.name}}</h1>
+        {% if profile.avatar %}
+        <img class="avatar" src="{{ site.baseurl }}/assets/images/{{ profile.avatar }}" alt=""/>
         {% endif %}
 
-        {% if site.data.profile.tagline %}
-        <h3 class="tagline">{{site.data.profile.tagline}}</h3>
+        {% if profile.name %}
+        <h1 class="name">{{ profile.name }}</h1>
+        {% endif %}
+
+        {% if profile.tagline %}
+        <h3 class="tagline">{{ profile.tagline }}</h3>
         {% endif %}
 
     </div><!--//profile-container-->
 
-    <div class="contact-container container-block">
-        <ul class="list-unstyled contact-list">
+    {% include contact.html %}
 
-            {% if site.data.profile.email %}
-            <li class="email"><i class="fa fa-envelope"></i><a href="mailto: {{site.data.profile.email}}">{{site.data.profile.email}}</a>
-            </li>
-            {% endif %}
-
-            {% if site.data.profile.phone %}
-            <li class="phone"><i class="fa fa-phone"></i><a href="tel:{{site.data.profile.phone}}">{{site.data.profile.phone}}</a>
-            </li>
-            {% endif %}
-
-            {% if site.data.profile.website %}
-            <li class="website"><i class="fa fa-globe"></i><a href="http://{{site.data.profile.website}}"
-                                                              target="_blank">{{site.data.profile.website}}</a>
-            </li>
-            {% endif %}
-
-            {% if site.data.profile.linkedin %}
-            <li class="linkedin"><i class="fa fa-linkedin"></i><a
-                    href="https://linkedin.com/in/{{site.data.profile.linkedin}}" target="_blank">{{site.data.profile.linkedin}}</a>
-            </li>
-            {% endif %}
-
-            {% if site.data.profile.github %}
-            <li class="github"><i class="fa fa-github"></i><a href="http://github.com/{{site.data.profile.github}}"
-                                                              target="_blank">{{site.data.profile.github}}</a></li>
-            {% endif %}
-
-            {% if site.data.profile.twitter %}
-            <li class="twitter"><i class="fa fa-twitter"></i><a
-                    href="https://twitter.com/{{site.data.profile.twitter}}" target="_blank">{{site.data.profile.twitter}}</a>
-            </li>
-            {% endif %}
-
-        </ul>
-    </div><!--//contact-container-->
-
-    {% if site.education_in_main == null or site.education_in_main == false %}
+    {% unless site.education_in_main %}
         {% include education.html %}
-    {% endif %}
+    {% endunless %}
+
     {% include language.html %}
     {% include interests.html %}
 
