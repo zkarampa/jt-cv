@@ -11,6 +11,11 @@
         filter: grayscale(1);
         -webkit-filter: greyscale(1);
     }
+
+    img{
+      max-width: 100px !important;
+    }
+
    .main-wrapper {
      .time {
          float: right;
