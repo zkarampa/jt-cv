@@ -21,6 +21,10 @@
      .section-title {
          font-size: 12pt;
      }
+
+     .job-title{
+          font-size: 11pt;
+     }
    }
 
    .sidebar-wrapper {
@@ -28,6 +32,10 @@
         float: right;
         width: 30%;
         -webkit-print-color-adjust: exact;
+
+        .name {
+            font-size: 20pt;
+        }
     }
 
     .remove-container.container-block {
